@@ -7,3 +7,9 @@
 ```bash
 npm install -g serverless
 ```
+
+**Create Project**
+
+```bash
+serverless create --template aws-nodejs --path nodejs-serveless
+```
