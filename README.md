@@ -13,3 +13,7 @@ npm install -g serverless
 ```bash
 serverless create --template aws-nodejs --path nodejs-serveless
 ```
+
+**References**
+
+- https://www.serverless.com/framework/docs/getting-started
