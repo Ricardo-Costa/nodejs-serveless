@@ -26,8 +26,8 @@ provider:
 
   # you can overwrite defaults here
   #  stage: dev
-  #  region: us-east-1
-  region: sa-east-1
+  region: us-east-1
+  # region: sa-east-1
   memorySize: 256 # mb
   iamRoleStatements:
     - Effect: Allow
@@ -86,8 +86,8 @@ functions:
           rules:
             - prefix: uploads/
             - suffix: .png
-  # hello:
-  #   handler: handler.hello
+  hello:
+    handler: handler.hello
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
@@ -139,3 +139,6 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+plugins:
+  - serverless-offline

@@ -6,7 +6,9 @@
   "dependencies": {
     "sharp": "^0.30.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "serverless-offline": "^8.4.0"
+  },
   "scripts": {
     "deploy": "serveless deploy -v"
   },
