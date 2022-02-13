@@ -18,15 +18,25 @@ service: nodejs-serveless
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
-frameworkVersion: '3'
+frameworkVersion: "3"
 
 provider:
   name: aws
   runtime: nodejs12.x
 
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
+  # you can overwrite defaults here
+  #  stage: dev
+  #  region: us-east-1
+  region: sa-east-1
+  memorySize: 256 # mb
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+        - s3:PutObject
+      Resource:
+        #        - "arn:aws:s3:::*" # todos
+        - "arn:aws:s3:::test/uploads/*"
 
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
@@ -59,8 +69,25 @@ provider:
 #    - include-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  optimize:
+    handler: optimize.handle
+    environment:
+      bucket: ricardo-costa-serverless
+    events:
+      - s3:
+          bucket: ricardo-costa-serverless
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: uploads/
+            - suffix: .jpg
+      - s3:
+          bucket: ricardo-costa-serverless
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: uploads/
+            - suffix: .png
+  # hello:
+  #   handler: handler.hello
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

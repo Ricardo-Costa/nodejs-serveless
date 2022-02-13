@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-serveless",
+  "version": "1.0.0",
+  "description": "> Simple project using serveless framework to learning and test features.",
+  "main": "handler.js",
+  "dependencies": {
+    "sharp": "^0.30.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "serveless deploy -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ricardo-Costa/nodejs-serveless.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ricardo-Costa/nodejs-serveless/issues"
+  },
+  "homepage": "https://github.com/Ricardo-Costa/nodejs-serveless#readme"
+}

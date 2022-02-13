@@ -17,3 +17,4 @@ serverless create --template aws-nodejs --path nodejs-serveless
 **References**
 
 - https://www.serverless.com/framework/docs/getting-started
+- http://slss.io/aws-creds-setup
