@@ -14,10 +14,28 @@ npm install -g serverless
 serverless create --template aws-nodejs --path nodejs-serveless
 ```
 
+**Config Serveless**
+
+```bash
+serverless config credentianls -o --provider aws --key=<my-key-here> --secret <my-secret-here>
+```
+
+**Deploy**
+
+```bash
+serverless deploy -v
+```
+
 **Test function with servelesss invoke**
 
 ```bash
 serverless invoke local --function hello --path mocks/test.json --region us-east-1
+```
+
+**Remove All**
+
+```bash
+serverless remove
 ```
 
 **Start OFF line**
